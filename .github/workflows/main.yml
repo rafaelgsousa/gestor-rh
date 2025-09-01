@@ -1,0 +1,23 @@
+name: WorkFlow Api Sejus 
+
+# on: workflow_dispatch
+on: push
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Boas vindas
+        run: echo "Sejá bem vindo!"
+      - name: Despedida
+        run: echo "Tchau!"
+      - name: Testando action
+        uses: actions/checkout@v4
+      - name: Instalando python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
